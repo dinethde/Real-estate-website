@@ -1,0 +1,115 @@
+@import "../../responsive.scss";
+
+nav {
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    text-transform: capitalize;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    // Nav items hover
+    &:hover {
+      scale: 1.05;
+    }
+
+    // Hide nav items on small screen sizes
+    @include sm {
+      display: none;
+    }
+  }
+
+  .left {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      img {
+        width: 28px;
+      }
+
+      span {
+        // Hide logo name in medium size screens
+        @include md {
+          display: none;
+        }
+
+        // Make it back to the initial status
+        @include sm {
+          display: initial;
+        }
+      }
+    }
+  }
+
+  .right {
+    // position: relative;
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    a {
+      padding: 12px 24px;
+      margin: 20px;
+    }
+
+    .register {
+      background-color: #fece51;
+    }
+
+    .menuIcon {
+      // Hide the menu icon in larger screens
+      display: none;
+      z-index: 999;
+
+      img {
+        width: 36px;
+        cursor: pointer;
+      }
+
+      // Show the menu icon in small screen
+      @include sm {
+        display: inline;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      background-color: black;
+      color: white;
+      height: 100vh;
+      width: 50%;
+      transition: 1s ease;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      font-size: 24px;
+
+      &.active {
+        right: 0%;
+      }
+
+      @include sm {
+        a {
+          display: initial;
+        }
+      }
+    }
+  }
+}
