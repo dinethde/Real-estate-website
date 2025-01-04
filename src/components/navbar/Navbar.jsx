@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Navbar.scss";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -14,15 +15,15 @@ function Navbar() {
         <a href="/">Home</a>
         <a href="/list">About us</a>
         <a href="/">Contact</a>
-        <a href="/">Agents</a>
       </div>
 
       {/* Navbar right */}
       <div className="right">
-        <a href="/">sign in</a>
         <a href="/" className="register">
-          sign up
+          <Link to={"/list"}>Listings</Link>
         </a>
+
+        {/* === Mobile Navbar === */}
         <div className="menuIcon">
           <img
             src="./menu.png"
@@ -36,9 +37,9 @@ function Navbar() {
           <a href="/">Home</a>
           <a href="/">About</a>
           <a href="/">Contact</a>
-          <a href="/">Agents</a>
-          <a href="/">Sign in</a>
-          <a href="/">Sign up</a>
+          <a href="/">
+            <Link to={"/list"}>Listings</Link>
+          </a>
         </div>
       </div>
     </nav>

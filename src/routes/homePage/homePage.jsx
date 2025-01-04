@@ -1,5 +1,6 @@
 import SearchBar from "../../components/searchBar/SearchBar";
 import "./homePage.scss";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -13,7 +14,8 @@ function HomePage() {
             incidunt aut ipsa consequuntur praesentium at tempore explicabo
             voluptatum? Commodi, itaque nostrum.
           </p>
-          <SearchBar />
+          {/* <SearchBar /> */}
+
           <div className="boxes">
             <div className="box">
               <h2>16+</h2>
@@ -30,10 +32,15 @@ function HomePage() {
               <p>Property Ready</p>
             </div>
           </div>
+
+          <a href="" className="primary-button">
+            <Link to={"/list"}>See all listings</Link>
+            <img src="/Arrow.svg" alt="" />
+          </a>
         </div>
       </div>
       <div className="imgContainer">
-        <img src="./bg.png" alt="" />
+        <img src="/bg.png" alt="" />
       </div>
     </div>
   );
